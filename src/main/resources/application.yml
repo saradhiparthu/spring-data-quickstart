@@ -8,6 +8,7 @@ spring:
     password: ${DB_PASSWORD}
     #password: root
   jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
     generate-ddl: true
     show-sql: true
     hibernate:
