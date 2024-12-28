@@ -1,13 +1,10 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://mysql-service.default.svc.cluster.local:3306/${DB_NAME}?useSSL=false
-        #jdbc:mysql://${DB_HOST}/${DB_NAME}?useSSL=false
-    #url: jdbc:mysql://localhost:3306/e-commerce?useSSL=false&serverTimezone=UTC
-    username: ${DB_USERNAME}
-    #username: root
-    password: ${DB_PASSWORD}
-    #password: root
+    url: jdbc:mysql://mysql-service:3306/e-commerce?useSSL=false
+    #url: jdbc:mysql://${DB_HOST:localhost}:3306/${DB_NAME:e-commerce}?useSSL=false
+    username: root
+    password: root
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     generate-ddl: true
