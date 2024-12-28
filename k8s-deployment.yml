@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-data-quickstart-deployment
+spec:
+  selector:
+    matchLabels:
+      app: spring-data-quickstart
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: spring-data-quickstart
+    spec:
+      containers:
+        - name: spring-data-quickstart
+          image: localhost:5000/spring-data-quickstart:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
